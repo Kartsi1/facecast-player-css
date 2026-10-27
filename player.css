@@ -1,26 +1,231 @@
-/* Цвет кнопки Play */
-.player-poster[data-poster] .play-wrapper[data-poster] svg path {
-fill: #37ff00;
+/* ОБЩЕЕ */
+
+/* Если нужно задать цвет везде разом — можно поменять здесь, 
+или указать цвет отдельно для каждого нужного элемента ниже по списку */
+:root {
+    --facecast-primary: #37ff00;
 }
 
-/* Цвет полосы громкости */
-.media-control[data-media-control] .media-control-layer[data-controls] .media-control-volume-bar[data-volume] .media-control-volume-bar-on[data-volume] {
-background: #37ff00;
+/* Фиолетовая полосочка слева от названия */
+.css-1pecpgp::before,
+.css-nxg9of::before,
+.css-py6w8e::before {
+    background-color: var(--facecast-primary) !important;
 }
 
-/* Точка громкости и текущей позиции воспроизведения*/
+/* Ссылки */
+label a, .userreg__footer a {
+    color: var(--facecast-primary) !important;
+    text-decoration: none !important;
+}
+a:hover {
+    text-decoration: underline !important;
+}
+
+
+/* УПРАВЛЕНИЕ ВОСПРОИЗВЕДЕНИЕМ */
+
+/* Анимация загрузки плеера */
+.spinner-three-bounce[data-spinner]:not(.is-mobile) > div,
+.spinner-three-bounce-player-preloader div,
+.spinner-three-bounce[data-spinner].is-mobile > div {
+    border-top-color: var(--facecast-primary) !important;
+    border-right-color: var(--facecast-primary) !important;
+    border-bottom-color: var(--facecast-primary) !important;
+}
+
+/* Точка текущей позиции воспроизведения */
 .media-control-layer[data-controls] .media-control-center-panel[data-media-control] .fragment-element__container .fragment-element__seek-scrubber,
 .media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-scrubber[data-seekbar],
 .media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-scrubber[data-seekbar] .bar-scrubber-icon[data-seekbar],
 .live-dvr-seekbar > .live-dvr-seekbar-scrubber,
 .media-control[data-media-control] .media-control-layer[data-controls] 
 .media-control-volume-bar[data-volume] .media-control-volume-bar-scrubber[data-volume]::after {
-background: #37ff00;
+    background: var(--facecast-primary) !important;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Спрячем точку внутри точки */
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-scrubber[data-seekbar] .bar-scrubber-icon[data-seekbar] {
+    display: none;
 }
 
 /* Загруженный буфер */
 .media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-background[data-seekbar] .bar-fill-2[data-seekbar],
 .media-control-layer[data-controls] .media-control-center-panel[data-media-control] .fragment-element__container .fragment-element__dot .fragment-element__progress {
-background: #37ff00;
+    background: var(--facecast-primary) !important;
 }
 
+/* Заполненная полоска живого эфира */
+.live-dvr-seekbar > .live-dvr-seekbar-background > .live-dvr-seekbar-background-fill-2 {
+    background: var(--facecast-primary) !important;
+}
+
+/* Ховер эпизода */
+.media-control-layer[data-controls] .media-control-center-panel[data-media-control] .fragment-element__container .fragment-element__dot:hover,
+.episodes-navigation-episode > .headline:hover, .episodes-navigation-episode-fragment:hover {
+    background: var(--facecast-primary) !important;
+}
+
+/* Кнопка «Включить звук» */
+.css-kcxfte, .css-xltwt6 {
+    border: 2px solid rgba(255,255,255,0.4);
+    background-color: rgba(40,36,45,0.8);
+    backdrop-filter: blur(20px);
+}
+
+/* Полоска громкости */
+.media-control[data-media-control] .media-control-layer[data-controls] .media-control-volume-bar[data-volume] .media-control-volume-bar-on[data-volume] {
+    background: var(--facecast-primary) !important;
+}
+
+/* Точка текущего уровня звука */
+.media-control[data-media-control] .media-control-layer[data-controls] .media-control-volume-bar[data-volume] .media-control-volume-bar-scrubber[data-volume] {
+    background: var(--facecast-primary) !important;
+}
+
+/* Кнопка перехода к прямому эфиру */
+.dvr-controls[data-dvr-controls] .live-info svg path,
+.dvr-controls[data-dvr-controls] .live-button svg path {
+    fill: var(--facecast-primary) !important;
+}
+
+/* Более мягкий градиент */
+.media-control-background{
+    background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0) 0%, 
+    rgba(0, 0, 0, 0.01) 6.67%, 
+    rgba(0, 0, 0, 0.04) 13.33%, 
+    rgba(0, 0, 0, 0.08) 20%, 
+    rgba(0, 0, 0, 0.14) 26.67%, 
+    rgba(0, 0, 0, 0.24) 33.33%, 
+    rgba(0, 0, 0, 0.34) 40%, 
+    rgba(0, 0, 0, 0.44) 46.67%, 
+    rgba(0, 0, 0, 0.56) 53.33%, 
+    rgba(0, 0, 0, 0.66) 60%, 
+    rgba(0, 0, 0, 0.76) 66.67%, 
+    rgba(0, 0, 0, 0.86) 73.33%, 
+    rgba(0, 0, 0, 0.92) 80%, 
+    rgba(0, 0, 0, 0.96) 90.1%, 
+    rgba(0, 0, 0, 0.98) 100%) !important;
+}
+
+/* Логотип Фейскаст */
+
+.media-control-layer[data-controls] .media-control-button[data-facecast-icon] {
+    background: var(--facecast-primary) !important;
+}
+
+.media-control-layer[data-controls] .media-control-button[data-facecast-icon]:hover {
+    filter:brightness(0.8) contrast(1.25) !important;
+}
+
+/* КНОПКИ, ССЫЛКИ И ПРОЧЕЕ */
+
+/* Кнопки */
+#auth-btn,
+#buy-btn,
+#us-auth-btn,
+#userreg-btn,
+.Iframe_body .LNIframe .alert_window_popup .sbtn-alert-confirm,
+.Iframe_body .LNIframe .viewer_presence_window_popup .sbtn-alert-confirm,
+.player-mobile-wrap .alert_window_popup .sbtn-alert-confirm,
+.player-mobile-wrap .viewer_presence_window_popup .sbtn-alert-confirm,
+#auth-toggle button,
+.polls-custom-choice-form-foot button,
+.episodes-navigation-episode-fragment.active,
+.episodes-navigation-episode.active:not(.fragment-active) > .headline,
+.css-1xhw5f1,
+.e1p7nqe80
+{
+    background: var(--facecast-primary) !important;
+    transition: all 300ms linear;
+}
+
+/* Ховер кнопок */
+#auth-btn:hover,
+#buy-btn:hover,
+#us-auth-btn:hover,
+#userreg-btn:hover,
+.Iframe_body .LNIframe .alert_window_popup .sbtn-alert-confirm:hover,
+.Iframe_body .LNIframe .viewer_presence_window_popup .sbtn-alert-confirm:hover,
+.player-mobile-wrap .alert_window_popup .sbtn-alert-confirm:hover,
+.player-mobile-wrap .viewer_presence_window_popup .sbtn-alert-confirm:hover,
+#auth-toggle button:hover,
+.polls-custom-choice-form-foot button:hover,
+.episodes-navigation-episode-fragment.active:hover,
+.episodes-navigation-episode.active:not(.fragment-active) > .headline:hover,
+.css-1xhw5f1:hover,
+.e1p7nqe80:hover {
+    filter:brightness(0.8) contrast(1.25) !important;
+}
+
+/* Кнопки ответа на опрос */
+.polls-overlay .polls-overlay__choices .choice:hover {
+    filter:brightness(0.8) contrast(1.25) !important;
+}
+
+
+/* Поля ввода */
+.userreg__body__name:focus-within::after,
+.userreg__body__email:focus-within::after,
+.userreg__body__phone:focus-within::after,
+.userreg__body__custom:focus-within::after {
+    border-color: var(--facecast-primary) !important;
+}
+
+/* Боковая панель */
+
+/* Текущая вкладка в боковой панели */
+#player_wrap_right_panel > .right-panel-header .item > .item-underline {
+    background: var(--facecast-primary) !important;
+}
+
+
+
+/* ФОРМА РЕГИСТРАЦИИ */
+
+/* Сообщение, если зритель убрал галочку */
+.userreg__body__accept-error .userreg__error_field {
+    padding: 0px;
+    margin: 4px 0px 0px -98px;
+    color: #28242D;
+}
+.userreg__body__accept-error .userreg__error_field:after {
+    content: "Для просмотра необходимо ваше согласие";
+    color: #f00;
+}
+
+/* Кнопка «Зарегистрироваться» */
+.userreg .userreg__btn {
+    max-width: 280px;
+}
+
+/* Доп. сообщения после формы регистрации */
+.userreg__footer  {
+    padding: 0px;
+    margin: 24px;
+}
+
+/* Ссылка «Есть код?» */
+.userreg-goback {
+    width: auto !important;
+}
+
+/* Предупреждение, если включено подтверждение входа */
+.userreg__warning,
+.userreg_phone_warning {
+	margin: 16px 0 0 0;
+}
+
+
+/* Вкладки чата */
+
+.e1ufnh3i5[data-selected="true"]::after {
+    background: var(--facecast-primary) !important;
+    box-shadow: none !important;
+}
+
+.active .l9_6di::after {
+    border-bottom-color: var(--facecast-primary) !important;
+}
