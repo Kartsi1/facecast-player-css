@@ -1,0 +1,24 @@
+/* Цвет кнопки Play */
+.player-poster[data-poster] .play-wrapper[data-poster] svg path {
+  fill: #37ff00;
+}
+
+/* Цвет полосы громкости */
+.media-control[data-media-control] .media-control-layer[data-controls] .media-control-volume-bar[data-volume] .media-control-volume-bar-on[data-volume] {
+  background: #37ff00;
+}
+
+/* Точка громкости и текущей позиции воспроизведения */
+.media-control-layer[data-controls] .media-control-center-panel[data-media-control] .fragment-element__container .fragment-element__seek-scrubber,
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-scrubber[data-seekbar],
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-scrubber[data-seekbar] .bar-scrubber-icon[data-seekbar],
+.live-dvr-seekbar > .live-dvr-seekbar-scrubber,
+.media-control[data-media-control] .media-control-layer[data-controls] .media-control-volume-bar[data-volume] .media-control-volume-bar-scrubber[data-volume]::after {
+  background: #37ff00;
+}
+
+/* Загруженный буфер */
+.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-background[data-seekbar] .bar-fill-2[data-seekbar],
+.media-control-layer[data-controls] .media-control-center-panel[data-media-control] .fragment-element__container .fragment-element__dot .fragment-element__progress {
+  background: #37ff00;
+}
