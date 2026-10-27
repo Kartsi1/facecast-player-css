@@ -117,11 +117,13 @@ a:hover {
 
 /* Логотип Фейскаст */
 
-.media-control-layer[data-controls] .media-control-button[data-facecast-icon] {
+.media-control-layer[data-controls] .media-control-button[data-facecast-icon],
+button[data-facecast-icon] {
     background: var(--facecast-primary) !important;
 }
 
-.media-control-layer[data-controls] .media-control-button[data-facecast-icon]:hover {
+.media-control-layer[data-controls] .media-control-button[data-facecast-icon]:hover,
+button[data-facecast-icon]:hover {
     filter:brightness(0.8) contrast(1.25) !important;
 }
 
