@@ -34,6 +34,11 @@ a:hover {
     border-bottom-color: var(--facecast-primary) !important;
 }
 
+/* Кнопка Play */
+.player-poster[data-poster] .play-wrapper[data-poster] svg path {
+    fill: var(--facecast-primary) !important;
+}
+
 /* Точка текущей позиции воспроизведения */
 .media-control-layer[data-controls] .media-control-center-panel[data-media-control] .fragment-element__container .fragment-element__seek-scrubber,
 .media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar] .bar-scrubber[data-seekbar],
